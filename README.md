@@ -20,6 +20,7 @@ A portfolio website is a great way to:
 | Odhy Pradhana | [odhyp.com](https://odhyp.com/) | [GitHub](https://github.com/odhyp/odhyp.com) | Hugo, TailwindCSS, JavaScript, Vercel |
 | Firdig Alfalakhi | [alfalakhi.catco.uno](https://alfalakhi.catco.uno/) | [GitHub](https://github.com/Firkhie) | Next.js, TailwindCSS, TypeScript, Vercel |
 | Parish Khan | [parish.cv](https://parish.cv/) | None | React, TypeScript, Tailwind CSS, Vite, Cloudflare |
+| Elliot Hu | [elliothu.me](https://elliothu.me/) | [GitHub](https://github.com/elliothux) | React, TypeScript, TanStack Start, Tailwind CSS, Cloudflare Workers |
 
 ## Contribution 📖
 
