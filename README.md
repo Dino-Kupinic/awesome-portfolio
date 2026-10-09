@@ -21,6 +21,8 @@ A portfolio website is a great way to:
 | Firdig Alfalakhi | [alfalakhi.catco.uno](https://alfalakhi.catco.uno/) | [GitHub](https://github.com/Firkhie) | Next.js, TailwindCSS, TypeScript, Vercel |
 | Parish Khan | [parish.cv](https://parish.cv/) | None | React, TypeScript, Tailwind CSS, Vite, Cloudflare |
 
+| Dino Kupinic | [dino-kupinic.dev](https://www.dino-kupinic.dev/) | [GitHub](https://github.com/Dino-Kupinic/dino-kupinic.dev) | Nuxt, Vue, TypeScript, Tailwind CSS, Vercel |
+
 ## Contribution 📖
 
 We encourage you to add your portfolio to this list. Follow our [Contribution Guide] for step-by-step instructions.
