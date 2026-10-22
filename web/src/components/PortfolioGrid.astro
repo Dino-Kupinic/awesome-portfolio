@@ -7,9 +7,9 @@ interface Props {
 	portfolios: CollectionEntry<'portfolios'>[];
 }
 
-// Missing `added` means just merged, before the bot stamps it: show it first.
+// Missing `added` means just merged, before the bot stamps it: show it last.
 const portfolios = Astro.props.portfolios.toSorted(
-  (a, b) => (b.data.added?.getTime() ?? Date.now()) - (a.data.added?.getTime() ?? Date.now()),
+  (a, b) => (a.data.added?.getTime() ?? Date.now()) - (b.data.added?.getTime() ?? Date.now()),
 );
 ---
 

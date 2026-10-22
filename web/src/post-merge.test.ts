@@ -21,14 +21,14 @@ test('leaves an already stamped Portfolio alone', () => {
 const jane = { author: 'Jane Doe', url: 'https://www.jane.dev/', techStack: ['Astro', 'Tailwind CSS'], added: new Date('2025-01-01') };
 const john = { author: 'John Roe', url: 'https://john.io/work', techStack: ['Hugo'], added: new Date('2026-05-05') };
 
-test('writes the Portfolio table newest first between the markers', () => {
+test('writes the Portfolio table oldest first between the markers', () => {
   const readme = 'intro\n<!-- portfolios:start -->\nstale\n<!-- portfolios:end -->\noutro\n';
   assert.equal(
     writeTable(readme, [jane, john]),
     'intro\n<!-- portfolios:start -->\n' +
       '| Author | URL | Tech Stack |\n| --- | --- | --- |\n' +
-      '| John Roe | [john.io/work](https://john.io/work) | Hugo |\n' +
       '| Jane Doe | [jane.dev](https://www.jane.dev/) | Astro, Tailwind CSS |\n' +
+      '| John Roe | [john.io/work](https://john.io/work) | Hugo |\n' +
       '<!-- portfolios:end -->\noutro\n',
   );
 });

@@ -5,4 +5,4 @@ Portfolios live as one YAML file each in `portfolios/` at the repo root, validat
 ## Consequences
 
 - Contributors must not edit the README table; CI overwrites it.
-- The `added` date is written into the file by the post-merge bot, not by contributors, so the site can sort newest first without git history.
+- The `added` date is written into the file by the post-merge bot, not by contributors, so the site can sort by date without git history.

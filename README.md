@@ -18,9 +18,9 @@ A portfolio website is a great way to:
 <!-- portfolios:start -->
 | Author | URL | Tech Stack |
 | --- | --- | --- |
-| Parish Khan | [parish.cv](https://parish.cv/) | React, TypeScript, Tailwind CSS, Vite, Cloudflare |
-| Firdig Alfalakhi | [alfalakhi.catco.uno](https://alfalakhi.catco.uno/) | Next.js, Tailwind CSS, TypeScript, Vercel |
 | Odhy Pradhana | [odhyp.com](https://odhyp.com/) | Hugo, Tailwind CSS, JavaScript, Vercel |
+| Firdig Alfalakhi | [alfalakhi.catco.uno](https://alfalakhi.catco.uno/) | Next.js, Tailwind CSS, TypeScript, Vercel |
+| Parish Khan | [parish.cv](https://parish.cv/) | React, TypeScript, Tailwind CSS, Vite, Cloudflare |
 <!-- portfolios:end -->
 
 ## Contribution 📖
