@@ -43,6 +43,6 @@ Inspired by [Awesome List]. Thanks to all contributors who help improve this pro
 
 <!-- LINKS -->
 
-[Contribution Guide]: https://awesome-porto.vercel.app/guide
+[Contribution Guide]: https://awesome-portfolios.odhyp.com/guide
 [MIT License]: /LICENSE
 [Awesome List]: https://github.com/sindresorhus/awesome
