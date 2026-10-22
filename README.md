@@ -4,7 +4,7 @@ An awesome list of portfolio websites to spark ideas and inspiration.
 
 This repository curates a collection of outstanding portfolio websites built by developers, designers, and creatives. Whether you're looking for design inspiration, technology stack insights, or best practices, this list is a great resource to explore various approaches to personal branding online.
 
-### Why Build a Portfolio?
+## Why Build a Portfolio?
 
 A portfolio website is a great way to:
 
@@ -15,11 +15,11 @@ A portfolio website is a great way to:
 
 ## Portfolio List ☕
 
-| Author | Live | Source | Tech Stack |
-| ------ | ---- | ------ | ---------- |
-| Odhy Pradhana | [odhyp.com](https://odhyp.com/) | [GitHub](https://github.com/odhyp/odhyp.com) | Hugo, TailwindCSS, JavaScript, Vercel |
-| Firdig Alfalakhi | [alfalakhi.catco.uno](https://alfalakhi.catco.uno/) | [GitHub](https://github.com/Firkhie) | Next.js, TailwindCSS, TypeScript, Vercel |
-| Parish Khan | [parish.cv](https://parish.cv/) | None | React, TypeScript, Tailwind CSS, Vite, Cloudflare |
+| Author           | Live                                                | Source                                       | Tech Stack                                        |
+| ---------------- | --------------------------------------------------- | -------------------------------------------- | ------------------------------------------------- |
+| Odhy Pradhana    | [odhyp.com](https://odhyp.com/)                     | [GitHub](https://github.com/odhyp/odhyp.com) | Hugo, TailwindCSS, JavaScript, Vercel             |
+| Firdig Alfalakhi | [alfalakhi.catco.uno](https://alfalakhi.catco.uno/) | [GitHub](https://github.com/Firkhie)         | Next.js, TailwindCSS, TypeScript, Vercel          |
+| Parish Khan      | [parish.cv](https://parish.cv/)                     | None                                         | React, TypeScript, Tailwind CSS, Vite, Cloudflare |
 
 ## Contribution 📖
 
