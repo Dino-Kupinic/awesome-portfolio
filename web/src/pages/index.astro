@@ -1,4 +1,12 @@
 ---
+import { existsSync } from 'node:fs';
+import { getCollection } from 'astro:content';
+import '../styles/global.css';
+
+// Missing `added` means just merged, before the bot stamps it: show it first.
+const portfolios = (await getCollection('portfolios')).sort(
+  (a, b) => (b.data.added?.getTime() ?? Date.now()) - (a.data.added?.getTime() ?? Date.now()),
+);
 ---
 
 <html lang="en">
@@ -8,9 +16,30 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Awesome Portfolio</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="mx-auto max-w-6xl p-6">
+		<h1 class="mb-6 text-3xl font-bold">Awesome Portfolio</h1>
+		<ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			{portfolios.map(({ id, data }) => (
+				<li class="overflow-hidden rounded-lg border border-gray-200">
+					<a href={data.url}>
+						{/* shortcut: cwd-relative check assumes the build runs in web/; fine until 04 fills every Screenshot */}
+						{existsSync(`public/screenshots/${id}.png`) ? (
+							<img src={`/screenshots/${id}.png`} alt={`Screenshot of ${data.author}'s Portfolio`} class="aspect-video w-full object-cover object-top" loading="lazy" />
+						) : (
+							<div class="aspect-video bg-gray-100" />
+						)}
+					</a>
+					<div class="p-4">
+						<p class="font-semibold">{data.author}</p>
+						<a href={data.url} class="text-sm text-gray-600 hover:underline">{new URL(data.url).hostname.replace(/^www\./, '')}</a>
+						<ul class="mt-2 flex flex-wrap gap-1">
+							{data.techStack.map((t) => <li class="rounded bg-gray-100 px-2 py-0.5 text-xs">{t}</li>)}
+						</ul>
+					</div>
+				</li>
+			))}
+		</ul>
 	</body>
 </html>
