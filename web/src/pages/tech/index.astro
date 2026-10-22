@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { techSlug } from '../../tech';
+
+const counts = new Map<string, number>();
+for (const { data } of await getCollection('portfolios')) {
+	for (const t of data.techStack) counts.set(t, (counts.get(t) ?? 0) + 1);
+}
+const used = [...counts].sort(([a], [b]) => a.localeCompare(b));
+---
+
+<Layout title="Technologies">
+	<ul class="flex flex-wrap gap-2">
+		{used.map(([t, count]) => (
+			<li><a href={`/tech/${techSlug(t)}`} class="block rounded bg-gray-100 px-3 py-1 hover:bg-gray-200">{t} <span class="text-gray-600">({count})</span></a></li>
+		))}
+	</ul>
+</Layout>

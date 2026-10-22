@@ -1,0 +1,38 @@
+---
+import { existsSync } from 'node:fs';
+import type { CollectionEntry } from 'astro:content';
+import { techSlug } from '../tech';
+
+interface Props {
+	portfolios: CollectionEntry<'portfolios'>[];
+}
+
+// Missing `added` means just merged, before the bot stamps it: show it first.
+const portfolios = Astro.props.portfolios.toSorted(
+  (a, b) => (b.data.added?.getTime() ?? Date.now()) - (a.data.added?.getTime() ?? Date.now()),
+);
+---
+
+<ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+	{portfolios.map(({ id, data }) => (
+		<li class="overflow-hidden rounded-lg border border-gray-200">
+			<a href={data.url}>
+				{/* shortcut: cwd-relative check assumes the build runs in web/; fine until 04 fills every Screenshot */}
+				{existsSync(`public/screenshots/${id}.png`) ? (
+					<img src={`/screenshots/${id}.png`} alt={`Screenshot of ${data.author}'s Portfolio`} class="aspect-video w-full object-cover object-top" loading="lazy" />
+				) : (
+					<div class="aspect-video bg-gray-100" />
+				)}
+			</a>
+			<div class="p-4">
+				<p class="font-semibold">{data.author}</p>
+				<a href={data.url} class="text-sm text-gray-600 hover:underline">{new URL(data.url).hostname.replace(/^www\./, '')}</a>
+				<ul class="mt-2 flex flex-wrap gap-1">
+					{data.techStack.map((t) => (
+						<li><a href={`/tech/${techSlug(t)}`} class="block rounded bg-gray-100 px-2 py-0.5 text-xs hover:bg-gray-200">{t}</a></li>
+					))}
+				</ul>
+			</div>
+		</li>
+	))}
+</ul>
