@@ -1,4 +1,5 @@
 import { test } from 'node:test';
+import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
 import { findProblems } from './validate.ts';
 
@@ -28,4 +29,11 @@ test('reports a duplicate URL, ignoring a trailing slash', () => {
   const john = { name: 'john-doe.yaml', text: 'author: John Doe\nurl: https://jane.dev\ntechStack: [Astro]\n' };
   const [problem] = findProblems([jane, john]);
   assert.match(problem, /^john-doe\.yaml: .*jane-doe\.yaml/);
+});
+
+test("CONTRIBUTING.md's template passes as-is", () => {
+  const guide = readFileSync(new URL('../../CONTRIBUTING.md', import.meta.url), 'utf8');
+  const text = guide.match(/```yaml\n([\s\S]*?)```/)?.[1];
+  assert.ok(text, 'CONTRIBUTING.md needs a ```yaml template block');
+  assert.deepEqual(findProblems([{ name: 'jane-doe.yaml', text }]), []);
 });
