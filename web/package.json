@@ -10,7 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "node --test \"src/**/*.test.ts\""
+    "test": "node --test \"src/**/*.test.ts\"",
+    "validate": "node scripts/validate.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
