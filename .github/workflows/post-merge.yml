@@ -1,0 +1,49 @@
+# After a contribution is merged: stamps `added`, captures missing Screenshots and regenerates the README table, in one bot commit.
+# Can't loop: pushes made with GITHUB_TOKEN never trigger workflows.
+name: Post-merge
+
+on:
+  push:
+    branches: [main]
+    paths: ['portfolios/**']
+
+permissions:
+  contents: write
+
+# Queue rather than race when merges land close together.
+concurrency:
+  group: post-merge
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+        # Tip of main, not the triggering commit, so a queued run sees the previous run's bot commit.
+        with:
+          ref: main
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm run post-merge
+      - run: pnpm run screenshots
+      - name: Commit if anything changed
+        run: |
+          git add ../portfolios ../README.md public/screenshots
+          git diff --cached --quiet && exit 0
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'chore: stamp, screenshot and list new Portfolios'
+          # main may have moved since checkout (e.g. a queued run behind another merge).
+          git pull --rebase
+          git push

@@ -15,11 +15,13 @@ A portfolio website is a great way to:
 
 ## Portfolio List ☕
 
-| Author           | Live                                                | Source                                       | Tech Stack                                        |
-| ---------------- | --------------------------------------------------- | -------------------------------------------- | ------------------------------------------------- |
-| Odhy Pradhana    | [odhyp.com](https://odhyp.com/)                     | [GitHub](https://github.com/odhyp/odhyp.com) | Hugo, TailwindCSS, JavaScript, Vercel             |
-| Firdig Alfalakhi | [alfalakhi.catco.uno](https://alfalakhi.catco.uno/) | [GitHub](https://github.com/Firkhie)         | Next.js, TailwindCSS, TypeScript, Vercel          |
-| Parish Khan      | [parish.cv](https://parish.cv/)                     | None                                         | React, TypeScript, Tailwind CSS, Vite, Cloudflare |
+<!-- portfolios:start -->
+| Author | URL | Tech Stack |
+| --- | --- | --- |
+| Parish Khan | [parish.cv](https://parish.cv/) | React, TypeScript, Tailwind CSS, Vite, Cloudflare |
+| Firdig Alfalakhi | [alfalakhi.catco.uno](https://alfalakhi.catco.uno/) | Next.js, Tailwind CSS, TypeScript, Vercel |
+| Odhy Pradhana | [odhyp.com](https://odhyp.com/) | Hugo, Tailwind CSS, JavaScript, Vercel |
+<!-- portfolios:end -->
 
 ## Contribution 📖
 
