@@ -11,9 +11,9 @@ const used = [...counts].sort(([a], [b]) => a.localeCompare(b));
 ---
 
 <Layout title="Technologies">
-	<ul class="flex flex-wrap gap-2">
+	<ul class="flex flex-wrap justify-center gap-3">
 		{used.map(([t, count]) => (
-			<li><a href={`/tech/${techSlug(t)}`} class="block rounded bg-gray-100 px-3 py-1 hover:bg-gray-200">{t} <span class="text-gray-600">({count})</span></a></li>
+			<li><a href={`/tech/${techSlug(t)}`} class="block rounded-full px-4 py-1.5 ring-1 ring-stone-200 transition hover:text-emerald-600 hover:ring-emerald-600 dark:ring-stone-800 dark:hover:text-emerald-400 dark:hover:ring-emerald-400">{t} <span class="text-stone-500">{count}</span></a></li>
 		))}
 	</ul>
 </Layout>

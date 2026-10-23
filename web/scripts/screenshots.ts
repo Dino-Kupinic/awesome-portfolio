@@ -1,4 +1,4 @@
-// `npm run screenshots`: captures missing Screenshots; `-- --all` retakes every one, `-- <slug>` retakes one.
+// `pnpm run screenshots`: captures missing Screenshots; `--all` retakes every one, `<slug>` retakes one.
 import { existsSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';

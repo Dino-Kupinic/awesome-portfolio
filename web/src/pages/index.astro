@@ -6,7 +6,6 @@ import PortfolioGrid from '../components/PortfolioGrid.astro';
 const portfolios = await getCollection('portfolios');
 ---
 
-<Layout title="Awesome Portfolio">
-	<p class="mb-6"><a href="/tech" class="text-gray-600 hover:underline">Browse by Technology</a></p>
+<Layout title="Awesome Portfolio" heading="A quiet gallery of developer portfolios">
 	<PortfolioGrid portfolios={portfolios} />
 </Layout>

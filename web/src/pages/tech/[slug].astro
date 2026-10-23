@@ -17,6 +17,5 @@ const { technology, matching } = Astro.props;
 ---
 
 <Layout title={`Portfolios built with ${technology}`}>
-	<p class="mb-6"><a href="/tech" class="text-gray-600 hover:underline">All Technologies</a></p>
 	<PortfolioGrid portfolios={matching} />
 </Layout>

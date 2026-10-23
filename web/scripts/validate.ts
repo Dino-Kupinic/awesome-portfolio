@@ -1,4 +1,4 @@
-// `npm run validate`: the PR check over every file in portfolios/. Unreachable URLs only warn.
+// `pnpm run validate`: the PR check over every file in portfolios/. Unreachable URLs only warn.
 import { readdirSync, readFileSync } from 'node:fs';
 import { parse } from 'yaml';
 import { portfoliosDir } from '../src/portfolio.ts';

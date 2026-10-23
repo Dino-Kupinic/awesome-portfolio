@@ -1,4 +1,4 @@
-// `npm run post-merge`: stamps today's date as `added` into new Portfolios and regenerates the README table.
+// `pnpm run post-merge`: stamps today's date as `added` into new Portfolios and regenerates the README table.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { parse } from 'yaml';
 import { portfolioFiles, portfolioSchema, portfoliosDir } from '../src/portfolio.ts';

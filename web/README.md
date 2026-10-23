@@ -1,43 +1,33 @@
-# Astro Starter Kit: Minimal
+# web
 
-```sh
-pnpm create astro@latest -- --template minimal
-```
+The site: an [Astro](https://astro.build) build of every Portfolio in `../portfolios/`, deployed to Cloudflare Workers. It also holds the scripts behind the PR check and the post-merge bot.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Use [pnpm](https://pnpm.io). Run every command from `web/`.
 
-## 🚀 Project Structure
+| Command                  | Action                                                                 |
+| :----------------------- | :--------------------------------------------------------------------- |
+| `pnpm install`           | Installs dependencies                                                  |
+| `pnpm dev`               | Starts the dev server at `localhost:4321`                              |
+| `pnpm build`             | Builds the site to `./dist/`                                           |
+| `pnpm preview`           | Previews the build locally                                             |
+| `pnpm run test`          | Runs the unit tests (`src/**/*.test.ts`)                               |
+| `pnpm run validate`      | The PR check: validates every file in `../portfolios/`                 |
+| `pnpm run screenshots`   | Captures missing Screenshots; `--all` retakes every one, `<slug>` one  |
+| `pnpm run post-merge`    | Stamps `added` on new Portfolios and regenerates the README table      |
 
-Inside of your Astro project, you'll see the following folders and files:
+## Layout
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+src/
+├── pages/          home, /tech, /tech/<slug>, /guide (renders ../CONTRIBUTING.md), 404
+├── layouts/        Layout.astro: the shared header and page shell
+├── components/     PortfolioGrid.astro: the Screenshot tiles
+├── styles/         global.css: Tailwind and the Geist font
+└── *.ts            Portfolio loading, validation and post-merge logic, with tests
+scripts/            entry points for validate, screenshots and post-merge
+public/screenshots/ one 1280x720 PNG per Portfolio
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Design
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+A minimal gallery: stone neutrals with an emerald accent, Geist, Screenshot-dominant tiles with the Author, URL and Technologies below. Light and dark follow the system: Tailwind's media-based `dark:` variant, and `prefers-color-scheme` in the guide's prose CSS.
