@@ -4,7 +4,7 @@ An awesome list of portfolio websites to spark ideas and inspiration.
 
 This repository curates a collection of outstanding portfolio websites built by developers, designers, and creatives. Whether you're looking for design inspiration, technology stack insights, or best practices, this list is a great resource to explore various approaches to personal branding online.
 
-### Why Build a Portfolio?
+## Why Build a Portfolio?
 
 A portfolio website is a great way to:
 
@@ -15,12 +15,14 @@ A portfolio website is a great way to:
 
 ## Portfolio List ☕
 
-| Author | Live | Source | Tech Stack |
-| ------ | ---- | ------ | ---------- |
-| Odhy Pradhana | [odhyp.com](https://odhyp.com/) | [GitHub](https://github.com/odhyp/odhyp.com) | Hugo, TailwindCSS, JavaScript, Vercel |
-| Firdig Alfalakhi | [alfalakhi.catco.uno](https://alfalakhi.catco.uno/) | [GitHub](https://github.com/Firkhie) | Next.js, TailwindCSS, TypeScript, Vercel |
-| Parish Khan | [parish.cv](https://parish.cv/) | None | React, TypeScript, Tailwind CSS, Vite, Cloudflare |
-| Dino Kupinic | [dino-kupinic.dev](https://www.dino-kupinic.dev/) | [GitHub](https://github.com/Dino-Kupinic/dino-kupinic.dev) | Nuxt, Vue, TypeScript, Tailwind CSS, Vercel |
+<!-- portfolios:start -->
+| Author | URL | Tech Stack |
+| --- | --- | --- |
+| Odhy Pradhana | [odhyp.com](https://odhyp.com/) | Hugo, Tailwind CSS, JavaScript, Vercel |
+| Firdig Alfalakhi | [alfalakhi.catco.uno](https://alfalakhi.catco.uno/) | Next.js, Tailwind CSS, TypeScript, Vercel |
+| Parish Khan | [parish.cv](https://parish.cv/) | React, TypeScript, Tailwind CSS, Vite, Cloudflare |
+| Elliot Hu | [elliothu.me](https://elliothu.me/) | React, TypeScript, TanStack Start, Tailwind CSS, Cloudflare |
+<!-- portfolios:end -->
 
 ## Contribution 📖
 
@@ -42,6 +44,6 @@ Inspired by [Awesome List]. Thanks to all contributors who help improve this pro
 
 <!-- LINKS -->
 
-[Contribution Guide]: https://awesome-porto.vercel.app/guide
+[Contribution Guide]: https://awesome-portfolios.odhyp.com/guide
 [MIT License]: /LICENSE
 [Awesome List]: https://github.com/sindresorhus/awesome
