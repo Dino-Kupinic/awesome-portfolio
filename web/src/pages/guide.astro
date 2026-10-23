@@ -1,26 +1,63 @@
 ---
-import Layout from '@/layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro"
 // Rendered straight from the repo's guide so there's only one copy.
-import { Content } from '../../../CONTRIBUTING.md';
+import { Content } from "../../../CONTRIBUTING.md"
 ---
 
 <Layout title="Contribution Guide">
-	<article class="guide mx-auto max-w-prose leading-relaxed"><Content /></article>
+  <article class="guide mx-auto max-w-prose leading-relaxed">
+    <Content />
+  </article>
 </Layout>
 
 <style>
-	/* Tailwind's preflight strips prose styles, so the guide gets its own. */
-	.guide :global(h1) { display: none; } /* Layout already shows the title */
-	.guide :global(h2) { margin: 2.5rem 0 0.75rem; font-size: 1.5rem; font-weight: 600; letter-spacing: -0.025em; }
-	.guide :global(p), .guide :global(ul), .guide :global(ol), .guide :global(pre) { margin-bottom: 1rem; }
-	.guide :global(ul) { list-style: disc; padding-left: 1.5rem; }
-	.guide :global(ol) { list-style: decimal; padding-left: 1.5rem; }
-	.guide :global(a) { text-decoration: underline; text-underline-offset: 4px; }
-	.guide :global(a:hover) { color: var(--color-emerald-600); }
-	.guide :global(pre) { padding: 1rem; border-radius: 1rem; overflow-x: auto; }
-	.guide :global(:not(pre) > code) { background: var(--color-stone-200); padding: 0 0.25rem; border-radius: 0.25rem; }
-	@media (prefers-color-scheme: dark) {
-		.guide :global(a:hover) { color: var(--color-emerald-400); }
-		.guide :global(:not(pre) > code) { background: var(--color-stone-800); }
-	}
+  /* Tailwind's preflight strips prose styles, so the guide gets its own. */
+  .guide :global(h1) {
+    display: none;
+  } /* Layout already shows the title */
+  .guide :global(h2) {
+    margin: 2.5rem 0 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+  .guide :global(p),
+  .guide :global(ul),
+  .guide :global(ol),
+  .guide :global(pre) {
+    margin-bottom: 1rem;
+  }
+  .guide :global(ul) {
+    list-style: disc;
+    padding-left: 1.5rem;
+  }
+  .guide :global(ol) {
+    list-style: decimal;
+    padding-left: 1.5rem;
+  }
+  .guide :global(a) {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .guide :global(a:hover) {
+    color: var(--color-emerald-600);
+  }
+  .guide :global(pre) {
+    padding: 1rem;
+    border-radius: 1rem;
+    overflow-x: auto;
+  }
+  .guide :global(:not(pre) > code) {
+    background: var(--color-stone-200);
+    padding: 0 0.25rem;
+    border-radius: 0.25rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    .guide :global(a:hover) {
+      color: var(--color-emerald-400);
+    }
+    .guide :global(:not(pre) > code) {
+      background: var(--color-stone-800);
+    }
+  }
 </style>

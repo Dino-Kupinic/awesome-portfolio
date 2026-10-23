@@ -1,38 +1,53 @@
 ---
-import '@/styles/global.css';
+import "@/styles/global.css"
 
 interface Props {
-	title: string;
-	// The page's h1, when it should differ from the tab title.
-	heading?: string;
+  title: string
+  // The page's h1, when it should differ from the tab title.
+  heading?: string
 }
 
-const { title, heading = title } = Astro.props;
-const linkClass = 'underline decoration-stone-300 underline-offset-4 hover:text-emerald-600 dark:decoration-stone-700 dark:hover:text-emerald-400';
+const { title, heading = title } = Astro.props
+const linkClass =
+  "underline decoration-stone-300 underline-offset-4 hover:text-emerald-600 dark:decoration-stone-700 dark:hover:text-emerald-400"
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&display=swap" />
-		<title>{title}</title>
-	</head>
-	<body class="min-h-screen bg-stone-50 font-sans text-stone-900 dark:bg-stone-950 dark:text-stone-100">
-		<header class="mx-auto max-w-5xl px-4 pt-20 pb-16 text-center sm:px-6">
-			<a href="/" class="text-sm font-medium uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Awesome Portfolio</a>
-			<h1 class="mt-4 text-4xl font-semibold tracking-tight text-balance sm:text-5xl">{heading}</h1>
-			<nav class="mt-6 text-stone-500">
-				<a href="/tech" class={linkClass}>Browse by Technology</a>
-				<span class="mx-3">·</span>
-				<a href="/guide" class={linkClass}>Add yours</a>
-			</nav>
-		</header>
-		<main class="mx-auto max-w-5xl px-4 pb-24 sm:px-6">
-			<slot />
-		</main>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&display=swap"
+    />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen bg-stone-50 font-sans text-stone-900 dark:bg-stone-950 dark:text-stone-100">
+    <header class="mx-auto max-w-5xl px-4 pt-20 pb-16 text-center sm:px-6">
+      <a
+        href="/"
+        class="text-sm font-medium uppercase tracking-widest text-emerald-600 dark:text-emerald-400"
+      >
+        Awesome Portfolio
+      </a>
+      <h1 class="mt-4 text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
+        {heading}
+      </h1>
+      <nav class="mt-6 text-stone-500">
+        <a href="/tech" class={linkClass}>
+          Browse by Technology
+        </a>
+        <span class="mx-3">·</span>
+        <a href="/guide" class={linkClass}>
+          Add yours
+        </a>
+      </nav>
+    </header>
+    <main class="mx-auto max-w-5xl px-4 pb-24 sm:px-6">
+      <slot />
+    </main>
+  </body>
 </html>

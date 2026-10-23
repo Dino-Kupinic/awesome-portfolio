@@ -4,16 +4,16 @@ The site: an [Astro](https://astro.build) build of every Portfolio in `../portfo
 
 Use [pnpm](https://pnpm.io). Run every command from `web/`.
 
-| Command                  | Action                                                                 |
-| :----------------------- | :--------------------------------------------------------------------- |
-| `pnpm install`           | Installs dependencies                                                  |
-| `pnpm dev`               | Starts the dev server at `localhost:4321`                              |
-| `pnpm build`             | Builds the site to `./dist/`                                           |
-| `pnpm preview`           | Previews the build locally                                             |
-| `pnpm run test`          | Runs the unit tests (`src/**/*.test.ts`)                               |
-| `pnpm run validate`      | The PR check: validates every file in `../portfolios/`                 |
-| `pnpm run screenshots`   | Captures missing Screenshots; `--all` retakes every one, `<slug>` one  |
-| `pnpm run post-merge`    | Stamps `added` on new Portfolios and regenerates the README table      |
+| Command                | Action                                                                |
+| :--------------------- | :-------------------------------------------------------------------- |
+| `pnpm install`         | Installs dependencies                                                 |
+| `pnpm dev`             | Starts the dev server at `localhost:4321`                             |
+| `pnpm build`           | Builds the site to `./dist/`                                          |
+| `pnpm preview`         | Previews the build locally                                            |
+| `pnpm run test`        | Runs the unit tests (`src/**/*.test.ts`)                              |
+| `pnpm run validate`    | The PR check: validates every file in `../portfolios/`                |
+| `pnpm run screenshots` | Captures missing Screenshots; `--all` retakes every one, `<slug>` one |
+| `pnpm run post-merge`  | Stamps `added` on new Portfolios and regenerates the README table     |
 
 ## Layout
 
