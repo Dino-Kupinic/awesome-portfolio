@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content"
+import Layout from "@/layouts/Layout.astro"
+import PortfolioGrid from "@/components/PortfolioGrid.astro"
+import { techSlug } from "@/tech"
+
+export async function getStaticPaths() {
+  const portfolios = await getCollection("portfolios")
+  const used = new Set(portfolios.flatMap((p) => p.data.techStack))
+  return [...used].map((technology) => ({
+    params: { slug: techSlug(technology) },
+    props: {
+      technology,
+      matching: portfolios.filter((p) => p.data.techStack.includes(technology)),
+    },
+  }))
+}
+
+const { technology, matching } = Astro.props
+---
+
+<Layout title={`Portfolios built with ${technology}`}>
+  <PortfolioGrid portfolios={matching} />
+</Layout>

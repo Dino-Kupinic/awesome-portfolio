@@ -1,0 +1,14 @@
+---
+import { getCollection } from "astro:content"
+import Layout from "@/layouts/Layout.astro"
+import PortfolioGrid from "@/components/PortfolioGrid.astro"
+
+const portfolios = await getCollection("portfolios")
+---
+
+<Layout
+  title="Awesome Portfolio"
+  heading="A quiet gallery of developer portfolios"
+>
+  <PortfolioGrid portfolios={portfolios} />
+</Layout>
