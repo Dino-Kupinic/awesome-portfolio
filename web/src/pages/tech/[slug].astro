@@ -1,8 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
-import PortfolioGrid from '../../components/PortfolioGrid.astro';
-import { techSlug } from '../../tech';
+import Layout from '@/layouts/Layout.astro';
+import PortfolioGrid from '@/components/PortfolioGrid.astro';
+import { techSlug } from '@/tech';
 
 export async function getStaticPaths() {
 	const portfolios = await getCollection('portfolios');
